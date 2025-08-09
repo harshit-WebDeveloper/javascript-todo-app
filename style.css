@@ -1,0 +1,28 @@
+* {
+  font-family: "Poppins", "Times New Roman", Times, serif;
+  margin-left: 5px;
+}
+button {
+  padding: 10px 25px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+input {
+  padding: 10px 22px;
+  font-size: 16px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.add-task {
+  padding: 10px 36px;
+  background-color: green;
+}
+.delete-task {
+  background-color: red;
+}
+.task-list {
+  font-size: 20px;
+}
