@@ -1,4 +1,4 @@
-const taskList = Array();
+let taskList = JSON.parse(localStorage.getItem("taskList")) || [];
 function addTask() {
   let taskInput = document.querySelector(".input-text");
   let taskDate = document.querySelector(".input-date");
@@ -10,6 +10,8 @@ function addTask() {
     return;
   }
   taskList.push({ taskValue: task, dateValue: date });
+  // Save to localStorage
+  localStorage.setItem("taskList", JSON.stringify(taskList));
   taskInput.value = "";
   taskDate.value = "";
   showListMain();
@@ -19,8 +21,14 @@ function showListMain() {
   listcontainer.innerHTML = "";
   for (let i = 0; i < taskList.length; i++) {
     listcontainer.innerHTML += `<p class='task-list'>${taskList[i].taskValue} ${taskList[i].dateValue}
-         <button class='delete-task' onclick="taskList.splice(${i}, 1); showListMain();">
+         <button class='delete-task' onclick="deleteTask(${i})">
            Delete
          </button></p>`;
   }
 }
+function deleteTask(index) {
+  taskList.splice(index, 1);
+  localStorage.setItem("taskList", JSON.stringify(taskList));
+  showListMain();
+}
+showListMain();
