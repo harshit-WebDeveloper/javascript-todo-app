@@ -14,10 +14,36 @@
   </head>
   <body>
     <h3>Todo App</h3>
-    <input type="text" class="input-text" placeholder="Enter Your Task" />
-    <input type="date" class="input-date" />
-    <button class="add-task" onclick="addTask();">Add</button>
+
+    <!-- Input row -->
+    <div class="todo-inputs">
+      <div>
+        <input type="text" class="input-text" placeholder="Enter Your Task" />
+        <span class="task-error" style="color: red; font-size: 14px"></span>
+      </div>
+
+      <div>
+        <input type="date" class="input-date" />
+        <span class="date-error" style="color: red; font-size: 14px"></span>
+      </div>
+
+      <div>
+        <button class="add-task">Add</button>
+        <button class="delete-all-task">Delete All</button>
+      </div>
+    </div>
+
+    <!-- Header row -->
+    <div class="todo-header">
+      <span>Task</span>
+      <span>Date</span>
+      <span>Action</span>
+    </div>
+
+    <!-- Task list -->
     <div class="js-todo-list-main"></div>
+
+    <!-- Main Logic -->
     <script src="todoLogic.js"></script>
   </body>
 </html>
